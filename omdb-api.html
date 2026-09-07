@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <style>
+        #GetMovieBtn {
+            display: none;
+        }
+
+        .searchContainer {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .searchInput {
+            width: 240px;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .searchInput:focus {
+            outline: none;
+            border-color: #555;
+        }
+
+        #searchBtn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        #searchBtn:hover {
+            background-color: #555;
+        }
+
+        #resultContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .movieCard {
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .movieCard img {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .movieCardContent {
+            padding: 12px;
+        }
+
+        .movieCard h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .movieCard p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SEARCH -->
+    <button id="GetMovieBtn">Filmi getir</button>
+
+    <div class="searchContainer">
+        <input class="searchInput" type="text" id="movieInput" placeholder="Enter movie name">
+        <button id="searchBtn">Search</button>
+    </div>
+    <!-- RESULT -->
+    <div id="resultContainer"></div>
+
+    <!--  kart -->
+    <template id="movieCardTemplate">
+        <article class="movieCard">
+            <img class="moviePoster" alt="Movie poster">
+            <div class="movieCardContent">
+                <h2 class="movieTitle"></h2>
+                <p class="movieYear"></p>
+            </div>
+        </article>
+    </template>
+
+    <!-- JavaScript  -->
+    <script src="api-task.js"></script>
+</body>
+
+</html>
